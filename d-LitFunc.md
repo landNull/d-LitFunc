@@ -2,6 +2,8 @@
 
 d-LitFunc is the build and documentation standard for applications in this set.
 
+The standards that apply to every project live in [standards.md](standards.md). That page is a reference. It uses [Diátaxis](https://diataxis.fr) for document shape and [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119) for requirement words. Do not restate a standard here. Link to that page.
+
 It has two halves. The first half is how a document is written. The second half is how an application is built. Both halves exist so the finished system is smaller, faster, safer, and easier to explain than a system written from scratch.
 
 ## What d-LitFunc currently is
