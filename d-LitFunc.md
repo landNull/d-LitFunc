@@ -25,6 +25,31 @@ A document does not mix kinds. A how-to does not teach. A reference does not arg
 
 That is the documentation half. It is already in use. Captain Rocket docs are split into `tutorials/`, `how-to/`, `reference/`, and `explanation/`. Stardust docs follow the same split. Comments in both codebases follow the same rule.
 
+## Documentation source of truth
+
+Documentation lives in the git repository. The repository is the source of truth. A master document in the repo links to every page with a relative path. Clicking a link opens that page in the same repository.
+
+Rules:
+
+1. One copy. Do not paste the same document into another repo or another folder. Link to the one copy.
+2. Relative links only. `[title](path/to/page.md)` resolves on any forge that renders Markdown and in a local clone. It does not depend on a host.
+3. One master. Each repository has one master document (`docs/index.md` or `docs/outline.md`) that lists every page and links to it. The master is the map. The pages are the content.
+4. The forge is interchangeable. GitHub, GitLab, Gitea, Forgejo, Codeberg, or a bare remote all work. The links do not use host features.
+5. No host lock-in. Do not use a forge's wiki, Pages, Actions, or any other feature that exists only on that forge. Plain Markdown in the repo is the manual.
+
+A shared standard (this document) lives in its own repository. A project that needs it links to that repository. It does not copy the files. If offline reading is required, add the standard repository as a git submodule and link relatively into the submodule. A submodule is plain git. It works on any forge.
+
+## Zero proprietary dependency
+
+An application built with d-LitFunc has no required dependency on a proprietary service.
+
+- The code runs from a git clone. Any forge can host the remote.
+- Documentation is Markdown in the repo. No hosted wiki, no proprietary docs platform.
+- Optional remote services (a model API, a tunnel, a package index) are optional. The application starts and does useful work without them.
+- Reduced capacity is acceptable. If an optional service is absent, the application says so and continues with what it can do locally.
+
+Standalone is the requirement. The application must run on a machine with no network access to a specific vendor. The documentation must remain readable from the clone alone.
+
 ## How an application is built
 
 The build half is the process that produced Stardust, Captain Rocket, and the helpers between them. It has three stages. Do not skip one.
@@ -83,8 +108,11 @@ This standard is in use. Each application is the Command Module. Captain Rocket 
 
 - [Stardust](stardust.md) — how the SM works inside Stardust. The Command Module side.
 - [Captain Rocket](captain-rocket.md) — how Captain Rocket attaches as the SM. The Service Module side.
+- [Documentation source of truth](docs-source.md) — where docs live, how they are linked, and the standalone rule.
 
 The SM pattern is the standard for application development with d-LitFunc. An application exposes a committed contract. It accepts an SM in a hidden folder. It runs alone when the SM is absent. When the SM is present it gains the coordinator, the bittybot, and the spoken path without changing its own verbs.
+
+The documentation rule is the same for every project: the repository is the source of truth, the master document links relatively, and the application runs standalone.
 
 ## The synergistic whole
 
