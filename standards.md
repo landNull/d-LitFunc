@@ -15,6 +15,7 @@ This page is the single source of truth. Add a new standard here. Do not copy a 
 - A how-to MUST NOT teach. A reference MUST NOT argue. An explanation MUST NOT list flags.
 - Names and documents MUST say exactly what the code does. A name MUST NOT use a metaphor.
 - Comments MUST explain why or a non-obvious contract. Comments MUST NOT restate the next line.
+- When a feature, a module, or a function is implemented, tested, and working, documentation MUST be written for it. That documentation MUST include comments in the code.
 - An author SHOULD use an existing standard. An author MUST NOT invent a standard when one already exists, unless the user defines one.
 - A document MUST be named for what it describes.
 - The repository MUST be the source of truth for documentation.
