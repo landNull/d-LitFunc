@@ -109,6 +109,7 @@ This standard is in use. Each application is the Command Module. Captain Rocket 
 - [Stardust](stardust.md) — how the SM works inside Stardust. The Command Module side.
 - [Captain Rocket](captain-rocket.md) — how Captain Rocket attaches as the SM. The Service Module side.
 - [Documentation source of truth](docs-source.md) — where docs live, how they are linked, and the standalone rule.
+- [Memory master](memory-master.md) — portable record of decisions and conventions. Read this at the start of work. Append every new durable fact.
 
 The SM pattern is the standard for application development with d-LitFunc. An application exposes a committed contract. It accepts an SM in a hidden folder. It runs alone when the SM is absent. When the SM is present it gains the coordinator, the bittybot, and the spoken path without changing its own verbs.
 
