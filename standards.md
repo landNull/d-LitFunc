@@ -34,6 +34,14 @@ This page is the single source of truth. Add a new standard here. Do not copy a 
 - Documentation that exists only on a website and not in the clone MUST NOT exist.
 - A shared standard MUST live in its own repository. A project MUST point at it. A project MUST NOT copy it. Offline reading SHOULD use a git submodule.
 
+## Docs satellite
+
+- The docs satellite is the local `docs/` tree. It is kept in sync with the d-LitFunc repository.
+- Any application MUST be able to open a page from the satellite with `-h`, `--help`, or `help`.
+- The help command MUST use the same pager path the installer uses: `show_help_pager`, which prefers `sensible-pager`, then `less`, then `more`.
+- A topic MUST resolve in this order: `docs/reference/commands/<topic>.md`, `docs/how-to/<topic>.md`, `docs/explanation/<topic>.md`, `docs/reference/<topic>.md`, then `docs/outline.md`.
+- Typing `?` or `help` at a prompt that has help text MUST open the matching page with the same pager.
+
 ## Build
 
 - An application MUST be built in three stages. Do not skip one. Prototype the functionality. Adopt existing tools. Bake a helper only for a gap.
