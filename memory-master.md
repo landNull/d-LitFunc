@@ -72,6 +72,9 @@ Add every new durable fact here. Do not leave a fact only in a conversation. The
 - An agent has a name, a role, and an ask-before-tool flag. It is a style and preference record. It does not own language tools. [2026-10-25]
 - A jetpack is a committed JSON file under `.captainrocket/jetpacks/`. It holds a role, a style note, a phrase map, and a tool list. [2026-10-25]
 - Task idempotency: inspect the target first. If the change is already present, do not rewrite the file. [2026-10-25]
+- `CAPTAIN_ROCKET_DEV=1` is a development bypass. Unset it for real runs. [2026-10-25]
+- `CAPTAIN_ROCKET_WORKSPACE` is the Landlock root. The agent may read and write only that path. [2026-10-25]
+- On Termux, `UV_LINK_MODE=copy`. [2026-10-25]
 - Contractors are any resource outside the local boardroom: remote LM/LLM or a person. Same resume shape. Role contractor, kind person or model. [2026-10-23]
 - Cheaper means time, then energy, then money. A small local function wins over a long fight with an existing tool. [2026-10-23]
 - n20 is a project memory, not an implementation task. [2026-10-23]
@@ -94,6 +97,9 @@ Add every new durable fact here. Do not leave a fact only in a conversation. The
 - Capcom contract: `contrib/captainrocket/run-tool.sh` resolves phrases to the runner or stardust. Emits JSON plus `SPEAK`. `STARDUST_SPEAK` and `STARDUST_JSON` never prompt. [2026-10-25]
 - Test preflight: `stardust test <command>` runs site-debug, heals if safe, re-checks, refuses if still failing. [2026-10-25]
 - Do not type `sudo stardust`. Use `-n` before mutating commands. [2026-10-25]
+- Host install order is `apps/MANIFEST`, not filename sort. [2026-10-25]
+- Paths: `/srv/platforms`, `/srv/stardust`. Databases are `bd_*`. Promote is ff-only. Refuse sudo on user binaries. [2026-10-25]
+- `deploy` is nologin and is not in the WireGuard NOPASSWD rule. [2026-10-25]
 
 ## How to add a memory
 
