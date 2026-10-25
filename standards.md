@@ -6,6 +6,8 @@ The key words MUST, MUST NOT, REQUIRED, SHALL, SHALL NOT, SHOULD, SHOULD NOT, RE
 
 Document shape follows [Diátaxis](https://diataxis.fr). Every document is one of four kinds and nothing else.
 
+d-LitFunc is three words joined by a hyphen: Diátaxis + Literal + Functional.
+
 This page is the single source of truth. Add a new standard here. Do not copy a standard into another document. Link to this page.
 
 ## Documentation
@@ -14,7 +16,11 @@ This page is the single source of truth. Add a new standard here. Do not copy a 
 - A document MUST NOT mix kinds.
 - A how-to MUST NOT teach. A reference MUST NOT argue. An explanation MUST NOT list flags.
 - Names and documents MUST say exactly what the code does. A name MUST NOT use a metaphor.
+- A reader MUST be able to read the documentation as a story. The parts MUST make sense in order.
+- The four Diátaxis kinds MUST interconnect. A tutorial MAY link to a how-to. A how-to MAY link to a reference. A reference MAY link to an explanation. An explanation MAY link back to a tutorial.
+- A deeper dive MUST be a link. The destination MUST contain a link that returns the reader to the place they left, so they can continue with a deeper understanding of that part.
 - Comments MUST explain why or a non-obvious contract. Comments MUST NOT restate the next line.
+- A code comment that addresses a function MUST include a link to this page, or to the specific section of a document that addresses that function.
 - When a feature, a module, or a function is implemented, tested, and working, documentation MUST be written for it. That documentation MUST include comments in the code.
 - An author SHOULD use an existing standard. An author MUST NOT invent a standard when one already exists, unless the user defines one.
 - A document MUST be named for what it describes.
@@ -39,6 +45,7 @@ This page is the single source of truth. Add a new standard here. Do not copy a 
 - A helper MUST be written only for a gap. A helper MUST be named for the gap it fills.
 - A helper MUST be small, do one job, and be called by the application. The user MUST NOT run the helper by hand unless debugging.
 - The core MUST be pure. Side effects MUST live in the shell. Functional Core, Imperative Shell.
+- A function MUST take values and return values. It MUST NOT open sockets, write files, or prompt. The shell around the core does the side effects.
 
 ## Independence
 
