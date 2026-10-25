@@ -77,6 +77,15 @@ Helpers in this set:
 
 Each helper is called by the application. The user does not run the helper by hand unless they are debugging it.
 
+## Applications
+
+This standard is in use. Each application is the Command Module. Captain Rocket is the Service Module (SM) when it is present in the application's hidden `.captainrocket/` folder.
+
+- [Stardust](stardust.md) — how the SM works inside Stardust. The Command Module side.
+- [Captain Rocket](captain-rocket.md) — how Captain Rocket attaches as the SM. The Service Module side.
+
+The SM pattern is the standard for application development with d-LitFunc. An application exposes a committed contract. It accepts an SM in a hidden folder. It runs alone when the SM is absent. When the SM is present it gains the coordinator, the bittybot, and the spoken path without changing its own verbs.
+
 ## The synergistic whole
 
 The finished application is the prototype path, with existing tools in the places they fit, and helpers in the gaps. The helpers are what make the standalone tools into one system.
