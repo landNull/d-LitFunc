@@ -65,6 +65,11 @@ This page is the single source of truth. Add a new standard here. Do not copy a 
 - The SM MUST NOT own the application's data. The SM MUST NOT rewrite the application's verbs. It MUST call them.
 - The coordinator MUST NOT shell into the application. It MUST call the contract, read machine lines, and read one spoken line.
 - The coordinator MUST NOT run `sudo` on the application. It MUST NOT prompt for a password.
+- When the SM is created for an application, every capability that Captain Rocket can carry MUST be created on the Captain Rocket side. The host application MUST NOT duplicate it.
+- The SM MUST include a jetpack that maps spoken phrases to the application's verbs.
+- The SM SHOULD include a bittybot that owns that jetpack and speaks the result into the chat log.
+- The SM MAY include an agent when a human must interact with that domain.
+- The application MUST expose only the contract. The phrase map, the specialist, the coordinator, and the spoken path MUST live on the Captain Rocket side.
 
 ## How to add a standard
 
